@@ -9,20 +9,17 @@ def stuff(option="p5"):
         with open("./Project/index.html","w") as f:
             html_p5= ("<!DOCTYPE html>\n  <head>\n\t<meta charset=\"utf-8\">\n\t<title>P5.js</title>\n\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js\"></script>\n\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js\"></script>\n\t<script src=\"sketch.js\"></script>\n  </head>\n</html>")
             f.write(html_p5)
-        with open("./Project/sketch.js","w") as i:
-            i.write("function setup(){\n  createCanvas(windowWidth,windowHeight)\n  background(0)\n}\n\nfunction draw(){\n\n}")
     elif option == "ml5":   
         with open("./Project/index.html","w") as f:
             html_ml5= ("<!DOCTYPE html>\n  <head>\n\t<meta charset=\"utf-8\">\n\t<title>ml5.js</title>\n\t<script src=\"https://unpkg.com/ml5@0.4.3/dist/ml5.min.js\"></script>\n\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js\"></script>\n\t<script src=\"https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js\"></script>\n\t<script src=\"sketch.js\"></script>\n  </head>\n</html>")
             f.write(html_ml5)
-        with open("./Project/sketch.js","w") as i:
-            i.write("function setup(){\n\tcreateCanvas(windowWidth,windowHeight)\n\tbackground(0)\n}\n\nfunction draw(){\n\n}")
+    with open("./Project/sketch.js","w") as i:
+        i.write("function setup(){\n\tcreateCanvas(windowWidth,windowHeight)\n\tbackground(0)\n}\n\nfunction draw(){\n\n}")
     else:
         print('Use \npython p5.py <-t>/<--type> <p5>OR<ml5>\npython p5.py -h [for help]')
 
 def run(args):
-    arg_input = args.input
-    stuff(arg_input)
+    stuff(args.input)
 
 def main():
     parser = argparse.ArgumentParser(description="ℹ️ This will create a p5  p5 + ml5 project with index.html & sketch.js")
